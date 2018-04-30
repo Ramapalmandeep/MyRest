@@ -1,26 +1,30 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Api Testing",
-		"_postman_id": "c6e7f65f-3856-7586-2988-bf6d7f53491b",
+		"name": "NewApi",
+		"_postman_id": "646576db-fba0-d961-31f9-bdb3763dcd00",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:3000/posts",
+			"name": "Mandi",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"tests[\"Response time is less than 200ms\"] = responseTime >200;",
 							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"+jsonData[0].author] = jsonData[0].author === \"typicode\";",
 							"",
+							"tests[\"Your test name\"+jsonData[0].title] = jsonData[0].title === \"json-server\";",
 							"",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+							"tests[\"Your test name\"+jsonData[0].id] = jsonData[0].id === 1;"
 						]
 					}
 				}
@@ -43,28 +47,37 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"id\": 3,\n        \"title\": \"json-server\",\n        \"author\": \"typicode\"\n    }"
+					"raw": ""
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/posts",
+			"name": "Mandi copy",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Response time is less than 200ms\"] = responseTime < 200;"
+							"tests[\"Response time is less than 200ms\"] = responseTime >200;",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"+jsonData[0].author] = jsonData[0].author === \"typicode\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].title] = jsonData[0].title === \"json-server\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].id] = jsonData[0].id === 1;"
 						]
 					}
 				}
 			],
 			"request": {
 				"url": "http://localhost:3000/posts",
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -80,7 +93,145 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"id\": 3,\n        \"title\": \"json-server\",\n        \"author\": \"typicode\"\n    }"
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mandi copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime >200;",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"+jsonData[0].author] = jsonData[0].author === \"typicode\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].title] = jsonData[0].title === \"json-server\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].id] = jsonData[0].id === 1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3000/posts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Cookie 2",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mandi copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime >200;",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"+jsonData[0].author] = jsonData[0].author === \"typicode\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].title] = jsonData[0].title === \"json-server\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].id] = jsonData[0].id === 1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3000/posts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Cookie 2",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Mandi copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime >200;",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"+jsonData[0].author] = jsonData[0].author === \"typicode\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].title] = jsonData[0].title === \"json-server\";",
+							"",
+							"tests[\"Your test name\"+jsonData[0].id] = jsonData[0].id === 1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3000/posts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Cookie 2",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
 				},
 				"description": ""
 			},
